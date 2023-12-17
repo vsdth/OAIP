@@ -569,6 +569,132 @@ void RecursiveImage4_6(HDC hdc, int cx, int cy, int size) {
 
 }
 
+// -----------------ПЕСРЧНЫЕЕ ЧАСЫ-----------------------
+
+
+void Hours(HDC hdc, int cx, int cy, int size) {
+    int x1 = cx - size / 2;
+    int y1 = cy - size;
+
+    int x2 = cx + size / 2;
+    int y2 = cy - size;
+
+    int x3 = cx - size;
+    int y3 = cy + size;
+
+    int x4 = cx + size;
+    int y4 = cy + size;
+   
+    HPEN hPen;
+    hPen = CreatePen(PS_SOLID, 2, RGB(255, 255, 0));
+    SelectObject(hdc, hPen);
+
+    MoveToEx(hdc, x1, y1, NULL);
+    LineTo(hdc, x2, y2);
+    LineTo(hdc, x3, y3);
+    LineTo(hdc, x4, y4);
+    LineTo(hdc, x1, y1);
+
+    DeleteObject(hPen);
+
+
+}
+
+
+void RecursiveHours_1(HDC hdc, int cx, int cy, int size) {
+    Hours(hdc, cx, cy, size);
+    if (size < 5) {
+        return;
+
+
+    }
+    RecursiveHours_1(hdc, cx + size, cy + size, size/2);
+}
+
+// 3 рисунок из лр
+
+void RecursiveHours_2(HDC hdc, int cx, int cy, int size) {
+    Hours(hdc, cx, cy, size);
+    if (size < 5) {
+        return;
+
+
+    }
+    RecursiveHours_2(hdc, cx + size, cy + size, size / 2);
+    RecursiveHours_2(hdc, cx - size, cy + size, size / 2);
+}
+
+// 2 рисунок из лр
+void RecursiveHours_3(HDC hdc, int cx, int cy, int size) {
+    Hours(hdc, cx, cy, size);
+    if (size < 5) {
+        return;
+
+
+    }
+    RecursiveHours_3(hdc, cx + size / 2, cy - size , size / 2);
+    RecursiveHours_3(hdc, cx - size / 2, cy - size , size / 2);
+    
+}
+// 4 ФИГУРА
+
+void RecursiveHours_4(HDC hdc, int cx, int cy, int size) {
+    Hours(hdc, cx, cy, size);
+    if (size < 5) {
+        return;
+
+
+    }
+    RecursiveHours_4(hdc, cx + size, cy + size, size / 2);
+    RecursiveHours_4(hdc, cx - size, cy + size, size / 2);
+
+    RecursiveHours_3(hdc, cx + size / 2, cy - size, size / 2);
+    RecursiveHours_3(hdc, cx - size / 2, cy - size, size / 2);
+
+    
+}
+// лево верх
+void RecursiveHours_5(HDC hdc, int cx, int cy, int size) {
+    Hours(hdc, cx, cy, size);
+    if (size < 5) {
+        return;
+
+
+    }
+    RecursiveHours_5(hdc, cx - size, cy - size, size / 2);
+}
+
+// Часы влево и вправо
+
+
+void RecursiveHours_6(HDC hdc, int cx, int cy, int size) {
+    Hours(hdc, cx, cy, size);
+    if (size < 5) {
+        return;
+
+
+    }
+    RecursiveHours_6(hdc, cx + size, cy, size / 2);
+    RecursiveHours_6(hdc, cx - size, cy, size / 2);
+}
+
+
+void RecursiveHours_7(HDC hdc, int cx, int cy, int size) {
+    Hours(hdc, cx, cy, size);
+    if (size < 5) {
+        return;
+
+
+    }
+    RecursiveHours_6(hdc, cx + size, cy, size / 2);
+    RecursiveHours_6(hdc, cx - size, cy, size / 2);
+
+    RecursiveHours_6(hdc, cx, cy + size, size / 2);
+    RecursiveHours_6(hdc, cx, cy - size, size / 2);
+
+}
+
+
 
 
 
@@ -612,7 +738,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
                         // ТРЕУГОЛЬНИКИ
 
-            RecursiveTriangle1(hdc, 200, 260, 100);
+         /*   RecursiveTriangle1(hdc, 200, 260, 100);
 
             RecursiveTriangle2(hdc, 500, 260, 100);
 
@@ -656,8 +782,32 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             RecursiveImage4_5(hdc, 1000, 600, 100);
 
-            RecursiveImage4_6(hdc, 1300, 300, 85);
+            RecursiveImage4_6(hdc, 1300, 300, 85); */
             
+            /// ПЕСОЧНЫЕ ЧАСЫ
+
+            RecursiveHours_1(hdc, 200, 200, 100);
+            RecursiveHours_2(hdc, 200, 200, 100);
+
+            RecursiveHours_3(hdc, 600, 300, 100);
+            RecursiveHours_4(hdc, 1000, 250, 100);
+
+            RecursiveHours_5(hdc, 200, 800, 100);
+
+            RecursiveHours_6(hdc, 700, 800, 100);
+
+            RecursiveHours_7(hdc, 1200, 800, 125);
+
+
+
+
+            
+
+
+
+
+
+
 
 
 
