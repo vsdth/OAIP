@@ -1,0 +1,417 @@
+////#define _CRT_SECURE_NO_WARNINGS
+////#include <stdio.h>
+////#include <Windows.h>
+////
+////#define MAX_LEN 80
+////char s[MAX_LEN];
+////
+
+//
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//	printf("Власенко Олег\n");
+//	printf("ЛР23 Задача 1\n");
+//
+//	// Входной файл
+//	FILE* fin = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\text1.txt", "rt");
+//	if (fin == NULL) {
+//		printf("Входной файл не найден");
+//		return;
+//	}
+//
+//	// Выходной файл
+//	FILE* fout;
+//	fout = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\out1.txt", "wt");
+//	if (fout == NULL) {
+//		printf("Выходной файл не создался");
+//		return;
+//	}
+//	
+//	//в цикле для всхе строк
+//	while (!feof(fin)) {
+//		//загрузить строку
+//		if (fgets(s, MAX_LEN - 1, fin) != NULL) {
+//			//обработать загруженную строку
+//			for (int i = 0; s[i] != '\0'; i++) {
+//				if (s[i] == '\t') {
+//					s[i] = '%';
+//				}
+//			}
+//			// сохранить строку в выходной файл
+//			fprintf(fout, "%s", s);
+//			printf(">>%s<<\n", s);
+//
+//		}
+//
+//	}
+//
+//
+//	// закрыли файлы
+//	fclose(fin);
+//	fclose(fout);
+//	printf("ЛР23 Задача 1 FINISH\n");
+//}
+
+
+
+						// Задача 2
+
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//	printf("Власенко Олег\n");
+//	printf("ЛР23 Задача 1\n");
+//
+//	// Входной файл
+//	FILE* fin = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\text2.txt", "rt");
+//	if (fin == NULL) {
+//		printf("Входной файл не найден");
+//		return;
+//	}
+//
+//	// Выходной файл
+//	FILE* fout;
+//	fout = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\out2.txt", "wt");
+//	if (fout == NULL) {
+//		printf("Выходной файл не создался");
+//		return;
+//	}
+//
+//	//в цикле для всхе строк
+//	while (!feof(fin)) {
+//		//загрузить строку
+//		if (fgets(s, MAX_LEN - 1, fin) != NULL) {
+//			//обработать загруженную строку
+//			for (int i = 0; s[i] != '\0'; i++) {
+//				s[i] = toupper(s[i]);
+//			}
+//			// сохранить строку в выходной файл
+//			fprintf(fout, "%s", s);
+//			printf(">>%s<<\n", s);
+//
+//		}
+//
+//	}
+//
+//
+//	// закрыли файлы
+//	fclose(fin);
+//	fclose(fout);
+//	printf("ЛР23 Задача 2 FINISH\n");
+//}
+
+					
+
+								// Задача 3
+
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//	printf("Власенко Олег\n");
+//	printf("ЛР23 Задача 1\n");
+//
+//	// Входной файл
+//	FILE* fin = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\text3.txt", "rt");
+//	if (fin == NULL) {
+//		printf("Входной файл не найден");
+//		return;
+//	}
+//
+//	// Выходной файл
+//	FILE* fout;
+//	fout = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\out3.txt", "wt");
+//	if (fout == NULL) {
+//		printf("Выходной файл не создался");
+//		return;
+//	}
+//
+//	//в цикле для всхе строк
+//	while (!feof(fin)) {
+//		//загрузить строку
+//		if (fgets(s, MAX_LEN - 1, fin) != NULL) {
+//			//обработать загруженную строку
+//			for (int i = 0; s[i] != '\0'; i++) {
+//				if (s[i] != ' ' && s[i + 1] == ' ') {
+//					s[i + 1] = '#';
+//				}
+//			}
+//			// сохранить строку в выходной файл
+//			fprintf(fout, "%s", s);
+//			printf(">>%s<<\n", s);
+//
+//		}
+//
+//	}
+//
+//
+//	// закрыли файлы
+//	fclose(fin);
+//	fclose(fout);
+//	printf("ЛР23 Задача 3 FINISH\n");
+//}
+
+
+			// Задача 4
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <Windows.h>
+//
+//#define MAX_LEN 40
+//
+//int getNextDelim(FILE* fp, char token[]);
+//int getNextWord(FILE* fp, char token[], int maxLen);
+//
+//char filename[] = "C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\text4.txt";
+//
+//void main() {
+//	printf("BEGIN!!!\n");
+//
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	// открываем файл с текстом
+//	FILE* fin = fopen(filename, "rt");
+//	if (fin == NULL) {
+//		// если файл не смогли открыть - сообщаем об этом
+//		printf("File %s doesn't opened!\n", filename);
+//		return;
+//	}
+//
+//
+//	char token[MAX_LEN];
+//	int res;
+//
+//	// пока не конец файла
+//	while (!feof(fin)) {
+//		// пока есть разделитель - берем его
+//		while (getNextDelim(fin, token)) {
+//			// выводим разделитель в консоль
+//			printf("<DELIM>%s</DELIM>\n", token);
+//		}
+//		// если есть слово - берем его
+//		if (getNextWord(fin, token, MAX_LEN)) {
+//			// выводим слово в консоль
+//			printf("<WORD>%s</WORD>\n", token);
+//		}
+//	}
+//
+//	// Закрываем файл с текстом
+//	fclose(fin);
+//	printf("END!!!\n");
+//
+//}
+//
+//
+//int isalpha_my(unsigned char ch);
+//
+//// Возвращает 1 - если  из файла прочитан разделитель.
+//// В этом случае в token возвращается строка, содержащая 
+//// этот разделитель.
+//// Если в файле был не разделитель - возвращает 0.
+//// В этом случае состояние token неопределено.
+//int getNextDelim(FILE* fp, char token[])
+//{
+//	int ch = getc(fp);
+//	if (ch == EOF) {
+//		return 0;
+//	}
+//	if (isalpha_my((unsigned char)ch)) {
+//		ungetc(ch, fp);
+//		return 0;
+//	}
+//	token[0] = (unsigned char)ch;
+//	token[1] = '\0';
+//		return 1;
+//}
+//
+//// Возвращает 1 - если  из файла прочитано слово.
+//// В этом случае в token возвращается строка, содержащая 
+//// это слово. Гарантируется что слово не болеее maxLen символов.
+//// Если в файле не было буквы - возвращает 0.
+//// В этом случае token содержит пустую строку.
+//int getNextWord(FILE* fp, char token[], int maxLen)
+//{
+//	int i = 0;
+//	int ch;
+//	while (((ch = getc(fp)) != EOF) && (i < maxLen - 1)) {
+//		if (!isalpha_my((unsigned char)(ch))) {
+//			break;
+//		}
+//		token[i++] = ch;
+//	}
+//	ungetc(ch, fp);
+//	token[i] = '\0';
+//		if (i == 0)
+//			return 0;
+//	return 1;
+//}
+//
+//// Возвращает 0 - если ch - не буква.
+//// Возвращает 1 - если ch - буква.
+//// Корректно работает для латинских букв (с кодами < 128)
+//// И для русских букв из кодировки ANSI
+//int isalpha_my(unsigned char ch) {
+//	if (isalpha(ch))
+//		return 1;
+//
+//	// ANSI кодировка!!!
+//	if (ch >= 192 && ch <= 223)
+//		return 1;
+//	if (ch >= 224 && ch <= 255)
+//		return 1;
+//
+//	/*
+//		if (ch >= 'А' && ch <= 'Я') return 1;
+//		if (ch >= 'а' && ch <= 'п') return 1;
+//		if (ch >= 'р' && ch <= 'я')return 1;
+//		if (ch == 'ё' ) return 1;
+//		if (ch == 'Ё') return 1;*/
+//
+//	return 0;
+//}
+//
+//
+//
+
+
+
+
+
+				// Задача 5
+
+//
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <Windows.h>
+//
+//
+//char filenameIn[] = "C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\text5.txt";
+//char filenameHTML[] = "C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\out5.html";
+//
+//void main() {
+//	printf("BEGIN!!!\n");
+//
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	// открыть файл текстовый (ВХОДНОЙ)
+//	FILE* fin = fopen(filenameIn, "rt");
+//	if (fin == NULL) {
+//		// если файл не смогли открыть - сообщаем об этом
+//		printf("File %s doesn't opened!\n", filenameIn);
+//		return;
+//	}
+//
+//	// открыть HTML файл (выходной файл)  
+//	FILE* fout = fopen(filenameHTML, "wt");
+//	if (fout == NULL) {
+//		// закрываем ранее успешно открытый входной файл 
+//		fclose(fin);
+//		// если файл не смогли открыть - сообщаем об этом
+//		printf("File %s doesn't opened!\n", filenameHTML);
+//		return;
+//	}
+//
+//
+//	// Выводим в выходной файл заголовок HTML документа
+//	fprintf(fout, "<!DOCTYPE html>");
+//	fprintf(fout, "<html>");
+//	fprintf(fout, "<head>");
+//	fprintf(fout, "<meta http - equiv = \"Content-Type\" content = 	\"text/html; charset=utf-8\" />");
+//	fprintf(fout, "<title>HTML Document</title>");
+//	fprintf(fout, "</head>");
+//	fprintf(fout, "<body>");
+//
+//	int ch;
+//	while ((ch = getc(fin)) != EOF) {
+//		// в HTML файл добавляем только что прочитанный 
+//		// символ "КАК ЕСТЬ"
+//		fprintf(fout, "%c", ch);
+//
+//		// если в тексте был символ новой строки – 
+//		// в HTML добавляем тег <BR> - новая строка
+//		if (ch == '\n')
+//			fprintf(fout, "<br>");
+//
+//	}
+//
+//	// выводит в HTML завершающие теги документа HTML
+//	fprintf(fout, "</body>");
+//	fprintf(fout, "</html>");
+//
+//	// Закрываем файл с текстом
+//	fclose(fin);
+//
+//	// Закрываем HTML файл 
+//	fclose(fout);
+//	printf("END!!!\n");
+//
+//}
+
+				// Задача 6
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+#include <string.h>
+#define MAX_LEN 500
+char s[MAX_LEN];
+
+int K;
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	printf("ЛР23 Задача 6\n");
+
+	// Входной файл
+	FILE* fin = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\text6.txt", "rt");
+	if (fin == NULL) {
+		printf("Входной файл не найден");
+		return;
+	}
+
+	// Выходной файл
+	FILE* fout;
+	fout = fopen("C:\\Users\\vs4death\\Desktop\\VS Projects\\lab23\\Files\\out6.txt", "wt");
+	if (fout == NULL) {
+		printf("Выходной файл не создался");
+		return;
+	}
+	
+	//в цикле для всех строк
+	while (!feof(fin)) {
+		//загрузить строку
+
+		if (fgets(s, MAX_LEN - 1, fin) != NULL) {
+			//обработать загруженную строку
+			K = 0;
+			int len = strlen(s);
+
+			for (int i = 0; i < len; i++) {
+				if (s[i] == ';') {
+					K++;;
+				}
+			}
+			// сохранить строку в выходной файл
+			fprintf(fout, "%s%d\n",s, K);
+
+		}
+
+	}
+
+
+	// закрыли файлы
+	fclose(fin);
+	fclose(fout);
+	printf("ЛР23 Задача 6 FINISH\n");
+}
+
+
+
+
+
+
