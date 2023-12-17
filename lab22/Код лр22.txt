@@ -1,0 +1,258 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+#include <string.h>
+
+
+					// Задача 1
+
+//void main() {
+//	
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//
+//	char name[12];
+//	printf("Введите ваше имя:");
+//	fgets(name, 11, stdin);
+//	printf("Привествую тебя, %s\n", name);
+//
+//
+//	{
+//		int x;
+//		scanf_s("%d", &x);
+//
+//	}
+//
+//
+//
+//}
+
+
+
+				// Задача 2
+
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	printf("Введите символ =");
+//
+//	int ch = getchar();
+//
+//	for (int c = ch; c <= ch + 19; c++) {
+//		printf("'%c' (%d)\n", c, c);
+//	}
+//	printf("\n\n\n");
+//
+//	{
+//		int x;
+//		scanf_s("%d", &x);
+//	}
+//
+//
+//}
+
+
+			// Задача 3
+
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	printf("Введите символ =");
+//
+//	int ch = getchar();
+//
+//	for (int c = ch; c >= ch - 29; c--) {
+//		printf("'%c' (%d)\n", c, c);
+//	}
+//	printf("\n\n\n");
+//
+//	{
+//		int x;
+//		scanf_s("%d", &x);
+//	}
+//
+//
+//}
+
+			// Задача 4
+
+//
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	// ввод строки
+//
+//	char s[80];
+//	printf("Введите строку: ");
+//	fgets(s, 79, stdin);
+//
+//
+//	printf("\n Вы ввели строку s = \" %s\"", s);
+//
+//	int cnt = 0;
+//	for (int i = 0; i < strlen(s); i++) {
+//		if (s[i] == ' ') cnt++;
+//	}
+//
+//	printf("\n Количество пробелов в данной строке равно %d ", cnt);
+//
+//	{
+//		int x;
+//		scanf_s("%d", &x);
+//	}
+//}
+
+				// Задача 5
+
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	char s[80];
+//	printf("Введите строку: ");
+//	fgets(s, 79, stdin);
+//
+//	printf("\n Вы ввели строку s = \" %s\"", s);
+//
+//	for (int i = 0; i < strlen(s); i++) {
+//		if (s[i] == ' ') {
+//			s[i] = '#';
+//		}
+//	}
+//
+//
+//	printf("\n Строка после обработки = \"%s\" ", s);
+//
+//}
+
+				// Задача 6.1
+
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	char s[80];
+//	printf("Введите строку: ");
+//	fgets(s, 79, stdin);
+//
+//	printf("\n Вы ввели строку s = \" %s\"", s);
+//
+//	for (int i = 0; s[i] != '\0'; i++) {
+//		if (isdigit(s[i])) {
+//			s[i] = '$';
+//		}
+//	}
+//
+//	printf("\n Строка после обработки = \" %s \" ", s);
+//
+//	
+//}
+
+
+			// Задача 6.2
+			
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//
+//
+//
+//	char s[80];
+//	printf("Введите строку: ");
+//	fgets(s, 79, stdin);
+//
+//	printf("\n Вы ввели строку s = \" %s\"", s);
+//
+//	for (int i = 0; s[i] != '\0'; i++) {
+//		if (s[i] >= '0' && s[i] <= '9')  {
+//			s[i] = '$';
+//		}
+//	}
+//
+//	printf("\n Строка после обработки = \" %s \" ", s);
+//
+//
+//}
+
+
+			// Задача 7.1
+
+
+//void main() {
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	char s[80];
+//	printf("Введите строку: ");
+//	fgets(s, 79, stdin);
+//
+//	printf("\n Вы ввели строку s = \" %s\"", s);
+//
+//	for (int i = 0; s[i] != '\0'; i++) {
+//		s[i] = toupper(s[i]);
+//	}
+//
+//	printf("\n Строка после обработки = \" %s \" ", s);
+//}
+
+
+
+			// Задача 7.2
+//char toUpper(char c) {
+//	if (c >= 'a' && c <= 'z') {
+//		return c - 32; 
+//	}
+//	return c;
+//}
+//
+//void main() {
+//
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//	char s[80];
+//	printf("Введите строку: ");
+//	fgets(s, 79, stdin);
+//	printf("\n Вы ввели строку s = \" %s\"", s);
+//
+//	for (int i = 0; s[i] != '\0'; i++) {
+//		s[i] = toUpper(s[i]);
+//	}
+//	
+//
+//	printf("\n Строка после обработки = \" %s \" ", s);
+//
+//
+//
+//}
+
+
+					// Индивидуальная задча ( Все символы арифметических операций,  заменить символом ‘_’ (подчеркивание).)
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+
+
+	char s[80];
+	printf("Введите строку: ");
+	fgets(s, 79, stdin);
+
+	printf("\n Вы ввели строку s = \" %s\"", s);
+
+	for (int i = 0; s[i] != '\0'; i++) {
+		if (s[i] == '*' || s[i] == '+' || s[i] == '-' || s[i] == '/')  {
+			s[i] = '_';
+		}
+	}
+
+	printf("\n Строка после обработки = \" %s \" ", s);
+
+
+}
