@@ -1,0 +1,3 @@
+﻿  TextProcessing.c
+C:\Users\vs4death\Desktop\Лаб работа 27\TextProcessing.c(171,13): warning C4013: isalpha: нет определения; предполагается "extern" с возвратом типа "int"
+  Lab27.vcxproj -> C:\Users\vs4death\Desktop\VS Projects\Lab27\Debug\Lab27.exe
